@@ -56,7 +56,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center">
               <EmailIcon className="text-gray-400 mr-2 flex-shrink-0" sx={{ fontSize: 20 }} />
-              <span>info@maresereno.com</span>
+              <span>info@seaside_tranquility.com</span>
             </li>
           </ul>
         </div>
