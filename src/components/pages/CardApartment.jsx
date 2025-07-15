@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import ap1 from '../../assets/ap.jpg';
 import ex from '../../assets/ex.jpg'
 import k from '../../assets/k.jpg';
+import { Link } from "react-router-dom";
+
+
 const accommodations = [
   {
     id: 1,
@@ -73,7 +76,9 @@ const AccommodationSection = () => {
             whileTap={{ scale: 0.95 }}
             className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
           >
-            View All Apartments
+         <Link to="/apartments" className="text-white text-2xl font-bold">
+               View All Apartments
+            </Link>
           </motion.button>
         </div>
       </div>
