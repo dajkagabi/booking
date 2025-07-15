@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-import heroBackgroundImage from '../../assets/bg.jpg';
+import heroBackgroundImage from '../../assets/back.jpg';
 
 const Hero = () => {
   const textVariants = {

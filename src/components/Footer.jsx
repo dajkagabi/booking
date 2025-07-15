@@ -8,7 +8,7 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-300 py-16 px-4 md:px-8 lg:px-16">
+    <footer className="bg-[#101828] text-gray-300 py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
         <div>

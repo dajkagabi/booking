@@ -108,7 +108,7 @@ const Navbar = () => {
           >
             Amenities
           </Link>{" "}
-          {/* Hozzáadva */}
+          
           <Link
             to="/gallery"
             onClick={toggleMobileMenu}
@@ -116,7 +116,7 @@ const Navbar = () => {
           >
             Gallery
           </Link>{" "}
-          {/* Hozzáadva */}
+          
           <Link
             to="/contact"
             onClick={toggleMobileMenu}

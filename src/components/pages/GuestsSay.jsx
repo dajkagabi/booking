@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Avatar } from "@material-tailwind/react"; 
 
-const testimonials = [
+const Guests = [
   {
     id: 1,
     name: 'Emma Johnson',
@@ -28,25 +28,25 @@ const testimonials = [
   }
 ];
 
-const TestimonialsSection = () => {
+const GuestsSay = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+      prevIndex === 0 ? Guests.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      prevIndex === Guests.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  const currentTestimonial = testimonials[currentIndex];
+  const currentTestimonial = Guests[currentIndex];
 
   return (
-    <section className="bg-gradient-to-b from-gray-900 to-blue-950 text-white py-20 px-4 md:px-8 lg:px-16">
+    <section className="bg-[#101828] to-blue-950 text-white py-20 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-4">What Our Guests Say</h2>
         <p className="text-lg text-gray-300 mb-12">
@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
         </p>
 
         <div className="relative overflow-hidden">
-          {/* Eltávolítva: AnimatePresence és motion.div */}
+          
           <div className="bg-[#2D3E50] p-8 rounded-lg shadow-xl max-w-2xl mx-auto flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
             <div className="flex-shrink-0 flex flex-col items-center">
               <Avatar
@@ -107,7 +107,7 @@ const TestimonialsSection = () => {
           </button>
 
           <div className="flex space-x-2">
-            {testimonials.map((_, index) => (
+            {Guests.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
@@ -143,4 +143,4 @@ const TestimonialsSection = () => {
   );
 };
 
-export default TestimonialsSection;
+export default GuestsSay;
