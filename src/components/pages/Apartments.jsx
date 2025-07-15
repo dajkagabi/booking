@@ -230,7 +230,7 @@ const ApartmentsPage = () => {
           {filteredApartments.length > 0 ? (
             filteredApartments.map(apartment => (
               <div key={apartment.id} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <img src={apartment.image} alt={apartment.name} className="w-full h-64 object-cover" /> {/* Módosítva: h-64 */}
+                <img src={apartment.image} alt={apartment.name} className="w-full h-64 object-cover" /> 
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{apartment.name}</h3>
                   <p className="text-gray-400 mb-4 text-sm">{apartment.description}</p>
