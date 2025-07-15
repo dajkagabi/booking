@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import ap1 from '../../assets/ap.jpg';
+import ex from '../../assets/ex.jpg';
+import t from '../../assets/t.jpg';
+import c from '../../assets/c.jpg';
+import d from '../../assets/d.jpg';
+import ch from '../../assets/ch.jpg';
+import w from '../../assets/w.jpg';
+import rf from '../../assets/rf.jpg';
+
 
 const apartmentsData = [
   {
@@ -17,7 +25,7 @@ const apartmentsData = [
     id: 2,
     name: 'Standard City View Room',
     description: 'Comfortable room with city views, ideal for short stays.',
-    image: ap1,
+    image: ex,
     guests: 1,
     size: '25 m²',
     view: 'City view',
@@ -28,7 +36,7 @@ const apartmentsData = [
     id: 3,
     name: 'Family Garden Apartment',
     description: 'Spacious apartment with a private garden access, perfect for families.',
-    image: ap1,
+    image: t,
     guests: 4,
     size: '70 m²',
     view: 'Garden view',
@@ -50,7 +58,7 @@ const apartmentsData = [
     id: 5,
     name: 'Cozy Studio Downtown',
     description: 'Small but comfortable studio apartment in the heart of the city.',
-    image: ap1,
+    image: c,
     guests: 1,
     size: '20 m²',
     view: 'City view',
@@ -72,7 +80,7 @@ const apartmentsData = [
     id: 7,
     name: 'Modern Lakeside Retreat',
     description: 'Contemporary apartment with stunning lake views, perfect for a peaceful getaway.',
-    image: 'https://via.placeholder.com/400x300?text=Apartment+7',
+    image: d,
     guests: 3,
     size: '55 m²',
     view: 'Lake view',
@@ -83,7 +91,7 @@ const apartmentsData = [
     id: 8,
     name: 'Charming Old Town Studio',
     description: 'Quaint studio located in the historic old town, steps away from attractions.',
-    image: 'https://via.placeholder.com/400x300?text=Apartment+8',
+    image: ch,
     guests: 2,
     size: '30 m²',
     view: 'Street view',
@@ -94,7 +102,7 @@ const apartmentsData = [
     id: 9,
     name: 'Mountain View Chalet',
     description: 'Rustic yet luxurious chalet nestled in the mountains with breathtaking views.',
-    image: 'https://via.placeholder.com/400x300?text=Apartment+9',
+    image: w,
     guests: 5,
     size: '90 m²',
     view: 'Mountain view',
@@ -105,7 +113,7 @@ const apartmentsData = [
     id: 10,
     name: 'Riverside Loft',
     description: 'Stylish loft apartment overlooking the river, ideal for urban explorers.',
-    image: 'https://via.placeholder.com/400x300?text=Apartment+10',
+    image: rf,
     guests: 2,
     size: '60 m²',
     view: 'River view',
@@ -222,7 +230,7 @@ const ApartmentsPage = () => {
           {filteredApartments.length > 0 ? (
             filteredApartments.map(apartment => (
               <div key={apartment.id} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <img src={apartment.image} alt={apartment.name} className="w-full h-48 object-cover" />
+                <img src={apartment.image} alt={apartment.name} className="w-full h-64 object-cover" /> {/* Módosítva: h-64 */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{apartment.name}</h3>
                   <p className="text-gray-400 mb-4 text-sm">{apartment.description}</p>
