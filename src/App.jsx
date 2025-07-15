@@ -8,6 +8,7 @@ import Contact from './components/pages/Contact';
 import Home from './components/pages/Home';
 import BookNow from './components/pages/BookNow';
 //import Hero from './components/pages/Hero';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
    
       </Routes>
 
-      {/* <Footer /> */}
+       <Footer /> 
     </Router>
   );
 }

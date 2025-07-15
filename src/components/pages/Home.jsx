@@ -4,6 +4,7 @@ import IntroSection from './IntroSection';
 import CheckDate from './CheckDate';
 import CardApartment from './CardApartment';
 import GuestsSay from './GuestsSay';
+import Experience from './Experience';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
    <CheckDate/>
    <CardApartment/>
    <GuestsSay/>
+   <Experience/>
    </>
   )
 }
