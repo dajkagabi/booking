@@ -108,6 +108,7 @@ const IntroSection = () => {
               className="col-span-1 w-full h-auto rounded-lg shadow-lg object-cover"
               variants={imageVariants}
             />
+           
           </motion.div>
         </div>
       </div>
