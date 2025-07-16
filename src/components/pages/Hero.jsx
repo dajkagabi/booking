@@ -69,7 +69,7 @@ const Hero = () => {
           animate="visible"
         >
           <Link
-            to="/book-now"
+            to="/booknow"
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition-colors duration-200 shadow-lg"
           >
             Book Your Stay

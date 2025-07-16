@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import ChooseRoom from './ChooseRoom';
-import GuestDetails from './GuestDetails';
-import Confirmation from './Confirmation';
+import React, { useState } from "react";
+import ChooseRoom from "./ChooseRoom";
+import GuestDetails from "./GuestDetails";
+import Confirmation from "./Confirmation";
+import d from '../../assets/d.jpg';
+import pt from '../../assets/pt.jpg';
+import t from '../../assets/t.jpg';
+import c from '../../assets/c.jpg';
 
 const BookNow = () => {
   //Állapot kezelés
@@ -9,77 +13,81 @@ const BookNow = () => {
   const [bookingDetails, setBookingDetails] = useState({
     room: null,
     guests: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      address: '',
-      city: '',
-      zipCode: '',
-      country: '',
-      specialRequests: '',
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      zipCode: "",
+      country: "",
+      specialRequests: "",
     },
     payment: {
-      method: 'creditCard',
-      cardName: '',
-      cardNumber: '',
-      expiryDate: '',
-      cvc: '',
+      method: "creditCard",
+      cardName: "",
+      cardNumber: "",
+      expiryDate: "",
+      cvc: "",
     },
     dates: {
-        checkIn: new Date(),
-        checkOut: new Date(new Date().setDate(new Date().getDate() + 7)),
-        nights: 7,
+      checkIn: new Date(),
+      checkOut: new Date(new Date().setDate(new Date().getDate() + 7)),
+      nights: 7,
     },
     priceSummary: {
-        basePrice: 0,
-        cleaningFee: 50,
-        serviceFee: 30,
-        total: 0,
-    }
+      basePrice: 0,
+      cleaningFee: 50,
+      serviceFee: 30,
+      total: 0,
+    },
   });
 
   //szoba lista
   const availableRooms = [
     {
-      id: 'executive-beach-studio',
-      name: 'Executive Beach Studio',
-      description: 'Beachfront',
+      id: "executive-beach-studio",
+      name: "Executive Beach Studio",
+      description: "Beachfront",
       pricePerNight: 150,
-      image: 'https://via.placeholder.com/400x250?text=Executive+Beach+Studio',
+      image: d,
     },
     {
-      id: 'luxury-penthouse',
-      name: 'Luxury Penthouse',
-      description: 'Panoramic views',
+      id: "luxury-penthouse",
+      name: "Luxury Penthouse",
+      description: "Panoramic views",
       pricePerNight: 300,
-      image: 'https://via.placeholder.com/400x250?text=Luxury+Penthouse',
+      image: pt,
     },
     {
-        id: 'family-apartment',
-        name: 'Family Apartment',
-        description: 'Spacious for families',
-        pricePerNight: 200,
-        image: 'https://via.placeholder.com/400x250?text=Family+Apartment',
-      },
-      {
-        id: 'standard-double',
-        name: 'Standard Double Room',
-        description: 'Cozy and comfortable',
-        pricePerNight: 100,
-        image: 'https://via.placeholder.com/400x250?text=Standard+Double+Room',
-      },
+      id: "family-apartment",
+      name: "Family Apartment",
+      description: "Spacious for families",
+      pricePerNight: 200,
+      image: t,
+    },
+    {
+      id: "standard-double",
+      name: "Standard Double Room",
+      description: "Cozy and comfortable",
+      pricePerNight: 100,
+      image: c,
+    },
   ];
 
   //Fogalalási részletek
   const updateBookingDetails = (newData) => {
     setBookingDetails((prevDetails) => {
       const updatedDetails = { ...prevDetails, ...newData };
-  //Árak újraszámolása (szoba + éjszaka)
+      //Árak újraszámolása (szoba + éjszaka)
       if (updatedDetails.room && updatedDetails.dates.nights) {
-          const basePrice = updatedDetails.room.pricePerNight * updatedDetails.dates.nights;
-          updatedDetails.priceSummary.basePrice = basePrice;
-          updatedDetails.priceSummary.total = basePrice + updatedDetails.priceSummary.cleaningFee + updatedDetails.priceSummary.serviceFee;
+        const basePrice =
+          updatedDetails.room.pricePerNight * updatedDetails.dates.nights;
+        updatedDetails.priceSummary.basePrice = basePrice;
+        updatedDetails.priceSummary.total =
+          basePrice +
+          updatedDetails.priceSummary.cleaningFee +
+          updatedDetails.priceSummary.serviceFee;
       }
 
       return updatedDetails;
@@ -125,7 +133,9 @@ const BookNow = () => {
         return (
           <Confirmation
             bookingDetails={bookingDetails}
-            onConfirm={() => alert('Booking confirmed! (This is just an example)')}
+            onConfirm={() =>
+              alert("Booking confirmed! (This is just an example)")
+            }
             onBack={goToPreviousStep}
           />
         );
@@ -137,21 +147,59 @@ const BookNow = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 py-16 px-8">
       <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-xl p-6">
-        <h1 className="text-3xl font-bold text-center mb-8 text-blue-400">Book Your Stay</h1>
+        <h1 className="text-3xl font-bold text-center mb-8 text-blue-400">
+          Book Your Stay
+        </h1>
 
         <div className="flex justify-between items-center mb-8 text-sm">
-          <div className={`flex flex-col items-center ${currentStep === 1 ? 'text-blue-400' : 'text-gray-500'}`}>
-            <div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${currentStep === 1 ? 'border-blue-400 bg-blue-400 text-white' : 'border-gray-500'}`}>1</div>
+          <div
+            className={`flex flex-col items-center ${
+              currentStep === 1 ? "text-blue-400" : "text-gray-500"
+            }`}
+          >
+            <div
+              className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${
+                currentStep === 1
+                  ? "border-blue-400 bg-blue-400 text-white"
+                  : "border-gray-500"
+              }`}
+            >
+              1
+            </div>
             <span className="mt-2">Choose Room</span>
           </div>
           <div className="flex-1 h-px bg-gray-700 mx-2"></div>
-          <div className={`flex flex-col items-center ${currentStep === 2 ? 'text-blue-400' : 'text-gray-500'}`}>
-            <div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${currentStep === 2 ? 'border-blue-400 bg-blue-400 text-white' : 'border-gray-500'}`}>2</div>
+          <div
+            className={`flex flex-col items-center ${
+              currentStep === 2 ? "text-blue-400" : "text-gray-500"
+            }`}
+          >
+            <div
+              className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${
+                currentStep === 2
+                  ? "border-blue-400 bg-blue-400 text-white"
+                  : "border-gray-500"
+              }`}
+            >
+              2
+            </div>
             <span className="mt-2">Guest Details</span>
           </div>
           <div className="flex-1 h-px bg-gray-700 mx-2"></div>
-          <div className={`flex flex-col items-center ${currentStep === 3 ? 'text-blue-400' : 'text-gray-500'}`}>
-            <div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${currentStep === 3 ? 'border-blue-400 bg-blue-400 text-white' : 'border-gray-500'}`}>3</div>
+          <div
+            className={`flex flex-col items-center ${
+              currentStep === 3 ? "text-blue-400" : "text-gray-500"
+            }`}
+          >
+            <div
+              className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${
+                currentStep === 3
+                  ? "border-blue-400 bg-blue-400 text-white"
+                  : "border-gray-500"
+              }`}
+            >
+              3
+            </div>
             <span className="mt-2">Confirmation</span>
           </div>
         </div>
