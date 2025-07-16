@@ -1,12 +1,60 @@
-# React + Vite
+# SEASIDE TRANQUILITY
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ez a projekt egy utazási témájú frontend foglalási alkalmazás, amely a felhasználói felületet biztosítja.
 
-Currently, two official plugins are available:
+**Célja:** Egy modern és reszponzív felület létrehozása utazási foglalások kezelésére.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technológiai Stack
 
-## Expanding the ESLint configuration
+* **Programnyelv:** JavaScript.
+* **Keretrendszerek/Könyvtárak:**
+    * **React:** A felhasználói felület építésére szolgáló JavaScript könyvtár.
+    * **Vite:** Egy gyors fejlesztői környezet és bundler modern webprojektekhez.
+    * **Tailwind CSS:** Egy utility-first CSS keretrendszer a gyors UI fejlesztéshez.
+* **Ikon Készletek:** Tailwind, MUI, Lucide.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Telepítési Útmutató
+
+Az alábbi lépésekkel telepítheti és indíthatja el a projektet a helyi gépén.
+
+**Előfeltételek:**
+
+Győződjön meg róla, hogy a következő szoftverek telepítve vannak a gépén:
+* Node.js (ajánlott az LTS verzió)
+* npm (Node.js telepítésével együtt érkezik) vagy Yarn
+
+**Telepítési lépések:**
+
+1.  **Tároló klónozása:**
+    Nyissa meg a terminált vagy parancssort, és klónozza a GitHub tárolót a következő paranccsal:
+    ```bash
+    git clone https://github.com/dajkagabi/booking
+    ```
+
+2.  **Navigálás a projekt könyvtárába:**
+    Lépjen be a klónozott tároló gyökérkönyvtárába:
+    ```bash
+    cd booking
+    ```
+
+3.  **Függőségek telepítése:**
+    Telepítse az összes szükséges projektfüggőséget. Használhatja az npm-et vagy a Yarn-t:
+    ```bash
+    # npm használatával
+    npm install
+
+    # vagy Yarn használatával
+    yarn install
+    ```
+
+4.  **Fejlesztői szerver indítása:**
+    Miután a függőségek telepítése befejeződött, indítsa el a fejlesztői szervert. Ez általában a következő paranccsal történik:
+    ```bash
+    # npm használatával
+    npm run dev
+
+    # vagy Yarn használatával
+    yarn dev
+    ```
+    Ez elindít egy helyi szervert, és az alkalmazás elérhető lesz a böngészőjében (általában a `http://localhost:5173/` címen, de a pontos portot a terminál kimenete fogja jelezni).
+
