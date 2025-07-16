@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
+//Időpontfoglalás, vendégek, szobák száma
 const ChooseRoom = ({ rooms, selectedRoom, onSelectRoom, onNext, bookingDetails, updateBookingDetails }) => {
   const [checkInDate, setCheckInDate] = useState(bookingDetails.dates.checkIn.toISOString().split('T')[0]);
   const [checkOutDate, setCheckOutDate] = useState(bookingDetails.dates.checkOut.toISOString().split('T')[0]);
   const [numberOfGuests, setNumberOfGuests] = useState(2);
 
+  //Éjszakák számának kiszámítása
   useEffect(() => {
     const calculateNights = (start, end) => {
         const diffTime = Math.abs(new Date(end) - new Date(start));
@@ -14,6 +16,7 @@ const ChooseRoom = ({ rooms, selectedRoom, onSelectRoom, onNext, bookingDetails,
 
     const nights = calculateNights(checkInDate, checkOutDate);
 
+    //Foglalási részletek
     updateBookingDetails({
       dates: {
         checkIn: new Date(checkInDate),
@@ -40,9 +43,10 @@ const ChooseRoom = ({ rooms, selectedRoom, onSelectRoom, onNext, bookingDetails,
   };
 
   return (
+     // Dátum és vendégek választó rész
     <div className="p-4">
       <h2 className="text-xl font-semibold mb-4 text-gray-200">Choose Room and Dates</h2>
-
+   
       <div className="bg-gray-700 p-4 rounded-lg mb-6 shadow-md">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div>
@@ -82,7 +86,9 @@ const ChooseRoom = ({ rooms, selectedRoom, onSelectRoom, onNext, bookingDetails,
         </div>
       </div>
 
+
       <div className="space-y-4">
+     {/*Szobák */}
         {rooms.map((room) => (
           <div
             key={room.id}

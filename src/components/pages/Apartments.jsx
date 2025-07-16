@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import ap1 from '../../assets/ap.jpg';
 import ex from '../../assets/ex.jpg';
 import t from '../../assets/t.jpg';
@@ -7,6 +8,7 @@ import d from '../../assets/d.jpg';
 import ch from '../../assets/ch.jpg';
 import w from '../../assets/w.jpg';
 import rf from '../../assets/rf.jpg';
+import lv from '../../assets/lv.jpg';
 
 
 const apartmentsData = [
@@ -69,7 +71,7 @@ const apartmentsData = [
     id: 6,
     name: 'Luxury Villa with Private Beach',
     description: 'Spacious villa offering direct access to a private beach.',
-    image: 'https://via.placeholder.com/400x300?text=Apartment+6',
+    image: lv,
     guests: 8,
     size: '200 m²',
     view: 'Beachfront',
@@ -251,7 +253,8 @@ const ApartmentsPage = () => {
                   <div className="flex justify-between items-center mt-auto">
                     <span className="text-2xl font-bold text-blue-400">${apartment.price} <span className="text-lg font-normal text-gray-400">/ night</span></span>
                     <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">
-                      Select
+                      <Link to="/booknow">Select</Link>
+                      
                     </button>
                   </div>
                 </div>

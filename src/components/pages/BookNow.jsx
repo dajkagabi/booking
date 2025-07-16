@@ -1,10 +1,10 @@
-// src/components/pages/BookNow.jsx
 import React, { useState } from 'react';
 import ChooseRoom from './ChooseRoom';
 import GuestDetails from './GuestDetails';
 import Confirmation from './Confirmation';
 
 const BookNow = () => {
+  //Állapot kezelés
   const [currentStep, setCurrentStep] = useState(1);
   const [bookingDetails, setBookingDetails] = useState({
     room: null,
@@ -39,6 +39,7 @@ const BookNow = () => {
     }
   });
 
+  //szoba lista
   const availableRooms = [
     {
       id: 'executive-beach-studio',
@@ -70,10 +71,11 @@ const BookNow = () => {
       },
   ];
 
+  //Fogalalási részletek
   const updateBookingDetails = (newData) => {
     setBookingDetails((prevDetails) => {
       const updatedDetails = { ...prevDetails, ...newData };
-
+  //Árak újraszámolása (szoba + éjszaka)
       if (updatedDetails.room && updatedDetails.dates.nights) {
           const basePrice = updatedDetails.room.pricePerNight * updatedDetails.dates.nights;
           updatedDetails.priceSummary.basePrice = basePrice;
@@ -84,6 +86,7 @@ const BookNow = () => {
     });
   };
 
+  //Foglalási folyamat továbbiak
   const goToNextStep = () => {
     setCurrentStep((prevStep) => prevStep + 1);
   };
@@ -92,6 +95,7 @@ const BookNow = () => {
     setCurrentStep((prevStep) => prevStep - 1);
   };
 
+  //Aktuális lépés
   const renderStep = () => {
     switch (currentStep) {
       case 1:
