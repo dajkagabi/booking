@@ -58,3 +58,5 @@ Győződjön meg róla, hogy a következő szoftverek telepítve vannak a gépé
     ```
     Ez elindít egy helyi szervert, és az alkalmazás elérhető lesz a böngészőjében (általában a `http://localhost:5173/` címen, de a pontos portot a terminál kimenete fogja jelezni).
 
+    
+
